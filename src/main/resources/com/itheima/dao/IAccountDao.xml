@@ -10,16 +10,19 @@
         <id property="id" column="id"></id>
         <result property="uid" column="uid"></result>
         <result property="money" column="money"></result>
+        <!--一对一关系的映射:配置封装的user内容
+        select 属性指定的内容,查询用户的唯一的标识 , 这个地方 引用的是 IUserDao
+        column 属性指定的内容 : 用户根据id查询时,所需要参数的值 , 也就是select查询指的是谁 , 就是 column中的uid,也指的是 下面 account中的uid
+        -->
+        <association property="user" column="uid" javaType="user" select="com.itheima.dao.IUserDao.findById">
 
+        </association>
     </resultMap>
-
 
     <!--查询所有-->
     <select id="findAll" resultMap="accountUserMap">
-        select * from account ;
+        select * from account;
     </select>
-
-
 
 
 </mapper>

@@ -56,8 +56,9 @@ public class MybatisTest {
         List<Account> accounts = accountDao.findAll();
         for (Account account : accounts) {
             System.out.println(account);
+            System.out.println("------------");
+            System.out.println(account.getUser());
         }
     }
-
 
 }

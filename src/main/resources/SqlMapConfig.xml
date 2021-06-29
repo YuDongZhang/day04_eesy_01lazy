@@ -6,6 +6,13 @@
     <!-- 配置properties -->
     <properties resource="jdbcConfig.properties">
     </properties>
+    <!-- 配置参数   <-->
+    <settings>
+        <!--  开启mybatis支持全局加载      -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- aggressiveLazyLoading       -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
     <!--别名配置-->
     <!--使用typeAliases配置别名，它只能配置domain中类的别名 -->
     <typeAliases>
