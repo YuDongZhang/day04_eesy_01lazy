@@ -24,5 +24,10 @@
         select * from account;
     </select>
 
+    <!--根据用户id查询账户列表-->
+    <select id="findAccountByUid" resultMap="accountUserMap">
+        select * from account where uid = #{uid};
+    </select>
+
 
 </mapper>
